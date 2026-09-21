@@ -2,16 +2,19 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/hacs/integration)
 
-A custom integration for Home Assistant to monitor your Felicity Solar setup. This integration securely connects to the Shine Felicity Solar API to fetch real-time data for your High Frequency Inverters and Lithium Battery Packs, automatically creating native Home Assistant sensors and supporting the built-in Energy Dashboard.
+A custom integration for Home Assistant to monitor your Felicity Solar setup. This integration securely connects to the Shine Felicity Solar API to fetch real-time data for your High Frequency Inverters, Lithium Battery Packs, and MPPT Charge Controllers, automatically creating native Home Assistant sensors and supporting the built-in Energy Dashboard.
 
 > **Note:** This integration was _VibeTranslated_ to Python directly from my original NodeJS FelicityAPI implementation! ⚡️
+
+> **Fork note:** This fork adds support for standalone MPPT charge controllers (e.g. SCCM12048-III), which the upstream integration did not yet recognize. See [upstream PR #4](https://github.com/matheustavarestrindade/felicity_solar_hacs/pull/4) for details. All credit for the original integration goes to Matheus Trindade below.
 
 ## ✨ Features
 
 - **UI Configuration:** Easy setup via the Home Assistant UI (no YAML required).
-- **Auto-Discovery:** Automatically detects all registered Inverters and Batteries tied to your account.
+- **Auto-Discovery:** Automatically detects all registered Inverters, Batteries, and Controllers tied to your account.
 - **Inverter Sensors:** AC Input/Output, PV Voltage/Power, Load Percentage, Temperatures, and more.
 - **Battery Sensors:** State of Charge (SOC), State of Health (SOH), Voltage, Current, and Rated Energy.
+- **Controller Sensors:** PV Voltage/Current/Power, Battery Voltage/Charging Current/Charging Power, Temperatures, Total Energy, Work Mode, and Status — for standalone MPPT charge controllers.
 - **Energy Dashboard Ready:** Includes `total_increasing` energy sensors (Energy PV Today, Load Today, Total Energy) ready to be plugged directly into the HA Energy Dashboard.
 
 ## 🛠️ Installation
